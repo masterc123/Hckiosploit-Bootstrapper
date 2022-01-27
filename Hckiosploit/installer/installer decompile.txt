@@ -1,0 +1,8 @@
+import os
+
+try:
+    os.mkdir('Scripts')
+
+except FileExistsError:
+
+     print("end")
