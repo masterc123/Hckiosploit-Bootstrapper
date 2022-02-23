@@ -1,0 +1,4 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/Jonatanortiz2/Johnny-Test/master/BAC'))();
+
+
+key: Sorry For Not Maintaining BAC:(

