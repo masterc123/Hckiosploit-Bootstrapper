@@ -1,0 +1,1396 @@
+first:  
+
+
+	    if _G.homebrewbest ~= true then
+	_G.homebrewbest = true
+	coroutine.wrap(function()
+		game["Run Service"].RenderStepped:connect(function()
+    settings().Physics.AllowSleep = false
+    setsimulationradius(math.huge*math.huge,math.huge*math.huge)
+end)
+	end)()
+end
+
+
+
+local function nocloloop()
+if  game.Players.LocalPlayer.Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+for _, child in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if child:IsA("BasePart") and child.CanCollide == true then
+child.CanCollide = false
+end
+end
+end
+end
+Noclipping = game:GetService('RunService').Stepped:connect(nocloloop)
+
+
+
+
+local Player = game.Players.LocalPlayer
+local Character = Player.Character
+if Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+    
+Character.RightUpperArm["RightShoulder"]:Destroy()
+Character.LeftUpperArm["LeftShoulder"]:Destroy()
+Character.LeftUpperLeg["LeftHip"]:Destroy()
+Character.RightUpperLeg["RightHip"]:Destroy()
+else
+Character.Torso["Right Shoulder"]:Destroy()
+Character.Torso["Left Shoulder"]:Destroy()
+Character.Torso["Right Hip"]:Destroy()
+Character.Torso["Left Hip"]:Destroy()
+end
+local Leftarm = Character:FindFirstChild("Left Arm") or Character:FindFirstChild("LeftUpperArm")
+local Rightarm = Character:FindFirstChild("Right Arm") or Character:FindFirstChild("RightUpperArm")
+local Torso = Character:FindFirstChild("Torso") or Character:FindFirstChild("UpperTorso")
+local Leftleg = Character:FindFirstChild("Left Leg") or Character:FindFirstChild("LeftUpperLeg")
+local Rightleg = Character:FindFirstChild("Right Leg") or Character:FindFirstChild("RightUpperLeg")
+local rig = game:GetObjects("rbxassetid://5508993607")[1]
+
+rig.Parent = Character
+rig:MoveTo(game.Players.LocalPlayer.Character.HumanoidRootPart.Position)
+rig.Humanoid:Move(game.Players.LocalPlayer.Character.Humanoid.MoveDirection, false)
+rig.Torso.Anchored = false
+
+if Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+
+
+alignPosition = Instance.new("AlignPosition",Leftarm)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Leftarm
+alignOr = Instance.new("AlignOrientation",Leftarm)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Leftarm
+--Rightarm
+alignPosition = Instance.new("AlignPosition",Rightarm)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Rightarm
+alignOr = Instance.new("AlignOrientation",Rightarm)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Rightarm
+--Torso
+alignPosition = Instance.new("AlignPosition",Torso)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Torso
+alignOr = Instance.new("AlignOrientation",Torso)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Torso
+--LeftLeg
+alignPosition = Instance.new("AlignPosition",Leftleg)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+alignPosition.Parent = Leftleg
+alignOr = Instance.new("AlignOrientation",Leftleg)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Leftleg
+--Rightleg
+alignPosition = Instance.new("AlignPosition",Rightleg)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+alignPosition.Parent = Rightleg
+alignOr = Instance.new("AlignOrientation",Rightleg)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Rightleg
+a0 = Instance.new("Attachment",Rightarm)
+a0.Position = Vector3.new(0, -0.4, 0)
+a1 = Instance.new("Attachment",rig["Right Arm"])
+a2 = Instance.new("Attachment",Rightarm)
+Rightarm.AlignPosition.Attachment0 = a0
+Rightarm.AlignPosition.Attachment1 = a1
+Rightarm.AlignOrientation.Attachment0 = a2
+Rightarm.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Leftarm)
+a0.Position = Vector3.new(0, -0.4, 0)
+a1 = Instance.new("Attachment",rig["Left Arm"])
+a2 = Instance.new("Attachment",Leftarm)
+Leftarm.AlignPosition.Attachment0 = a0
+Leftarm.AlignPosition.Attachment1 = a1
+Leftarm.AlignOrientation.Attachment0 = a2
+Leftarm.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Torso)
+a0.Position = Vector3.new(0, -0.2, 0)
+a1 = Instance.new("Attachment",rig["Torso"])
+a2 = Instance.new("Attachment",Torso)
+Torso.AlignPosition.Attachment0 = a0
+Torso.AlignPosition.Attachment1 = a1
+Torso.AlignOrientation.Attachment0 = a2
+Torso.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Leftleg)
+a0.Position = Vector3.new(0, -0.5, 0)
+
+a1 = Instance.new("Attachment",rig["Left Leg"])
+a2 = Instance.new("Attachment",Leftleg)
+Leftleg.AlignPosition.Attachment0 = a0
+Leftleg.AlignPosition.Attachment1 = a1
+Leftleg.AlignOrientation.Attachment0 = a2
+Leftleg.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Rightleg)
+a0.Position = Vector3.new(0, -0.5, 0)
+
+a1 = Instance.new("Attachment",rig["Right Leg"])
+a2 = Instance.new("Attachment",Rightleg)
+Rightleg.AlignPosition.Attachment0 = a0
+Rightleg.AlignPosition.Attachment1 = a1
+Rightleg.AlignOrientation.Attachment0 = a2
+Rightleg.AlignOrientation.Attachment1 = a1
+
+else 
+
+alignPosition = Instance.new("AlignPosition",Leftarm)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Leftarm
+alignOr = Instance.new("AlignOrientation",Leftarm)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Leftarm
+--Rightarm
+alignPosition = Instance.new("AlignPosition",Rightarm)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Rightarm
+alignOr = Instance.new("AlignOrientation",Rightarm)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Rightarm
+--Torso
+alignPosition = Instance.new("AlignPosition",Torso)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+--alignPosition.Parent = Torso
+alignOr = Instance.new("AlignOrientation",Torso)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Torso
+--LeftLeg
+alignPosition = Instance.new("AlignPosition",Leftleg)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+alignPosition.Parent = Leftleg
+alignOr = Instance.new("AlignOrientation",Leftleg)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Leftleg
+--Rightleg
+alignPosition = Instance.new("AlignPosition",Rightleg)
+alignPosition.RigidityEnabled = false
+alignPosition.ApplyAtCenterOfMass = false
+alignPosition.MaxForce = 9e9
+alignPosition.MaxVelocity = 9e99
+alignPosition.ReactionForceEnabled = false
+alignPosition.Responsiveness = 9e99
+alignPosition.Parent = Rightleg
+alignOr = Instance.new("AlignOrientation",Rightleg)
+alignOr.MaxTorque = 9e99
+alignOr.MaxAngularVelocity = 9e99
+alignOr.PrimaryAxisOnly = false
+alignOr.ReactionTorqueEnabled = false
+alignOr.Responsiveness = 200
+alignOr.RigidityEnabled = false
+--alignOr.Parent = Rightleg
+a0 = Instance.new("Attachment",Rightarm)
+a1 = Instance.new("Attachment",rig["Right Arm"])
+a2 = Instance.new("Attachment",Rightarm)
+Rightarm.AlignPosition.Attachment0 = a0
+Rightarm.AlignPosition.Attachment1 = a1
+Rightarm.AlignOrientation.Attachment0 = a2
+Rightarm.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Leftarm)
+a1 = Instance.new("Attachment",rig["Left Arm"])
+a2 = Instance.new("Attachment",Leftarm)
+Leftarm.AlignPosition.Attachment0 = a0
+Leftarm.AlignPosition.Attachment1 = a1
+Leftarm.AlignOrientation.Attachment0 = a2
+Leftarm.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Torso)
+a1 = Instance.new("Attachment",rig["Torso"])
+a2 = Instance.new("Attachment",Torso)
+Torso.AlignPosition.Attachment0 = a0
+Torso.AlignPosition.Attachment1 = a1
+Torso.AlignOrientation.Attachment0 = a2
+Torso.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Leftleg)
+
+a1 = Instance.new("Attachment",rig["Left Leg"])
+a2 = Instance.new("Attachment",Leftleg)
+Leftleg.AlignPosition.Attachment0 = a0
+Leftleg.AlignPosition.Attachment1 = a1
+Leftleg.AlignOrientation.Attachment0 = a2
+Leftleg.AlignOrientation.Attachment1 = a1
+a0 = Instance.new("Attachment",Rightleg)
+
+a1 = Instance.new("Attachment",rig["Right Leg"])
+a2 = Instance.new("Attachment",Rightleg)
+Rightleg.AlignPosition.Attachment0 = a0
+Rightleg.AlignPosition.Attachment1 = a1
+Rightleg.AlignOrientation.Attachment0 = a2
+Rightleg.AlignOrientation.Attachment1 = a1
+end
+
+rig.HumanoidRootPart.Anchored = false
+spawn(function()
+while true do
+wait()
+if Character:FindFirstChild("Humanoid").Health == 0 then
+Character:BreakJoints()
+rig:BreakJoints()
+end
+end
+end)
+
+function nocol(same)
+for i,v in pairs(Character:GetDescendants()) do
+if v:IsA("BasePart") then
+HILOL=Instance.new("NoCollisionConstraint",v)
+HILOL.Part0 = v
+HILOL.Part1 = same
+end
+end
+end
+for i,v in pairs(rig:GetDescendants()) do
+if v:IsA("BasePart") then
+nocol(v)
+end
+end
+
+
+spawn(function()
+
+
+local Figure = rig.Animate.Parent
+local Torso = Figure:WaitForChild("Torso")
+local RightShoulder = Torso:WaitForChild("Right Shoulder")
+local LeftShoulder = Torso:WaitForChild("Left Shoulder")
+local RightHip = Torso:WaitForChild("Right Hip")
+local LeftHip = Torso:WaitForChild("Left Hip")
+local Neck = Torso:WaitForChild("Neck")
+local Humanoid = Figure:WaitForChild("Humanoid")
+local pose = "Standing"
+
+local currentAnim = ""
+local currentAnimInstance = nil
+local currentAnimTrack = nil
+local currentAnimKeyframeHandler = nil
+local currentAnimSpeed = 1.0
+local animTable = {}
+local animNames = { 
+	idle = 	{	
+				{ id = "http://www.roblox.com/asset/?id=180435571", weight = 9 },
+				{ id = "http://www.roblox.com/asset/?id=180435792", weight = 1 }
+			},
+	walk = 	{ 	
+				{ id = "http://www.roblox.com/asset/?id=180426354", weight = 10 } 
+			}, 
+	run = 	{
+				{ id = "run.xml", weight = 10 } 
+			}, 
+	jump = 	{
+				{ id = "http://www.roblox.com/asset/?id=125750702", weight = 10 } 
+			}, 
+	fall = 	{
+				{ id = "http://www.roblox.com/asset/?id=180436148", weight = 10 } 
+			}, 
+	climb = {
+				{ id = "http://www.roblox.com/asset/?id=180436334", weight = 10 } 
+			}, 
+	sit = 	{
+				{ id = "http://www.roblox.com/asset/?id=178130996", weight = 10 } 
+			},	
+	toolnone = {
+				{ id = "http://www.roblox.com/asset/?id=182393478", weight = 10 } 
+			},
+	toolslash = {
+				{ id = "http://www.roblox.com/asset/?id=129967390", weight = 10 } 
+--				{ id = "slash.xml", weight = 10 } 
+			},
+	toollunge = {
+				{ id = "http://www.roblox.com/asset/?id=129967478", weight = 10 } 
+			},
+	wave = {
+				{ id = "http://www.roblox.com/asset/?id=128777973", weight = 10 } 
+			},
+	point = {
+				{ id = "http://www.roblox.com/asset/?id=128853357", weight = 10 } 
+			},
+	dance1 = {
+				{ id = "http://www.roblox.com/asset/?id=182435998", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491037", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491065", weight = 10 } 
+			},
+	dance2 = {
+				{ id = "http://www.roblox.com/asset/?id=182436842", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491248", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491277", weight = 10 } 
+			},
+	dance3 = {
+				{ id = "http://www.roblox.com/asset/?id=182436935", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491368", weight = 10 }, 
+				{ id = "http://www.roblox.com/asset/?id=182491423", weight = 10 } 
+			},
+	laugh = {
+				{ id = "http://www.roblox.com/asset/?id=129423131", weight = 10 } 
+			},
+	cheer = {
+				{ id = "http://www.roblox.com/asset/?id=129423030", weight = 10 } 
+			},
+}
+local dances = {"dance1", "dance2", "dance3"}
+
+-- Existance in this list signifies that it is an emote, the value indicates if it is a looping emote
+local emoteNames = { wave = false, point = false, dance1 = true, dance2 = true, dance3 = true, laugh = false, cheer = false}
+
+function configureAnimationSet(name, fileList)
+	if (animTable[name] ~= nil) then
+		for _, connection in pairs(animTable[name].connections) do
+			connection:disconnect()
+		end
+	end
+	animTable[name] = {}
+	animTable[name].count = 0
+	animTable[name].totalWeight = 0	
+	animTable[name].connections = {}
+
+	-- check for config values
+	local config = rig.Animate:FindFirstChild(name)
+	if (config ~= nil) then
+--		print("Loading anims " .. name)
+		table.insert(animTable[name].connections, config.ChildAdded:connect(function(child) configureAnimationSet(name, fileList) end))
+		table.insert(animTable[name].connections, config.ChildRemoved:connect(function(child) configureAnimationSet(name, fileList) end))
+		local idx = 1
+		for _, childPart in pairs(config:GetChildren()) do
+			if (childPart:IsA("Animation")) then
+				table.insert(animTable[name].connections, childPart.Changed:connect(function(property) configureAnimationSet(name, fileList) end))
+				animTable[name][idx] = {}
+				animTable[name][idx].anim = childPart
+				local weightObject = childPart:FindFirstChild("Weight")
+				if (weightObject == nil) then
+					animTable[name][idx].weight = 1
+				else
+					animTable[name][idx].weight = weightObject.Value
+				end
+				animTable[name].count = animTable[name].count + 1
+				animTable[name].totalWeight = animTable[name].totalWeight + animTable[name][idx].weight
+	--			print(name .. " [" .. idx .. "] " .. animTable[name][idx].anim.AnimationId .. " (" .. animTable[name][idx].weight .. ")")
+				idx = idx + 1
+			end
+		end
+	end
+
+	-- fallback to defaults
+	if (animTable[name].count <= 0) then
+		for idx, anim in pairs(fileList) do
+			animTable[name][idx] = {}
+			animTable[name][idx].anim = Instance.new("Animation")
+			animTable[name][idx].anim.Name = name
+			animTable[name][idx].anim.AnimationId = anim.id
+			animTable[name][idx].weight = anim.weight
+			animTable[name].count = animTable[name].count + 1
+			animTable[name].totalWeight = animTable[name].totalWeight + anim.weight
+--			print(name .. " [" .. idx .. "] " .. anim.id .. " (" .. anim.weight .. ")")
+		end
+	end
+end
+
+-- Setup animation objects
+function scriptChildModified(child)
+	local fileList = animNames[child.Name]
+	if (fileList ~= nil) then
+		configureAnimationSet(child.Name, fileList)
+	end	
+end
+
+rig.Animate.ChildAdded:connect(scriptChildModified)
+rig.Animate.ChildRemoved:connect(scriptChildModified)
+rig.HumanoidRootPart.Anchored = false
+
+for name, fileList in pairs(animNames) do 
+	configureAnimationSet(name, fileList)
+end	
+
+-- ANIMATION
+
+-- declarations
+local toolAnim = "None"
+local toolAnimTime = 0
+
+local jumpAnimTime = 0
+local jumpAnimDuration = 0.3
+
+local toolTransitionTime = 0.1
+local fallTransitionTime = 0.3
+local jumpMaxLimbVelocity = 0.75
+
+-- functions
+
+function stopAllAnimations()
+	local oldAnim = currentAnim
+
+	-- return to idle if finishing an emote
+	if (emoteNames[oldAnim] ~= nil and emoteNames[oldAnim] == false) then
+		oldAnim = "idle"
+	end
+
+	currentAnim = ""
+	currentAnimInstance = nil
+	if (currentAnimKeyframeHandler ~= nil) then
+		currentAnimKeyframeHandler:disconnect()
+	end
+
+	if (currentAnimTrack ~= nil) then
+		currentAnimTrack:Stop()
+		currentAnimTrack:Destroy()
+		currentAnimTrack = nil
+	end
+	return oldAnim
+end
+
+function setAnimationSpeed(speed)
+	if speed ~= currentAnimSpeed then
+		currentAnimSpeed = speed
+		currentAnimTrack:AdjustSpeed(currentAnimSpeed)
+	end
+end
+
+function keyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+
+		local repeatAnim = currentAnim
+		-- return to idle if finishing an emote
+		if (emoteNames[repeatAnim] ~= nil and emoteNames[repeatAnim] == false) then
+			repeatAnim = "idle"
+		end
+		
+		local animSpeed = currentAnimSpeed
+		playAnimation(repeatAnim, 0.0, Humanoid)
+		setAnimationSpeed(animSpeed)
+	end
+end
+
+-- Preload animations
+function playAnimation(animName, transitionTime, humanoid) 
+		
+	local roll = math.random(1, animTable[animName].totalWeight) 
+	local origRoll = roll
+	local idx = 1
+	while (roll > animTable[animName][idx].weight) do
+		roll = roll - animTable[animName][idx].weight
+		idx = idx + 1
+	end
+--		print(animName .. " " .. idx .. " [" .. origRoll .. "]")
+	local anim = animTable[animName][idx].anim
+
+	-- switch animation		
+	if (anim ~= currentAnimInstance) then
+		
+		if (currentAnimTrack ~= nil) then
+			currentAnimTrack:Stop(transitionTime)
+			currentAnimTrack:Destroy()
+		end
+
+		currentAnimSpeed = 1.0
+	
+		-- load it to the humanoid; get AnimationTrack
+		currentAnimTrack = humanoid:LoadAnimation(anim)
+		currentAnimTrack.Priority = Enum.AnimationPriority.Core
+		 
+		-- play the animation
+		currentAnimTrack:Play(transitionTime)
+		currentAnim = animName
+		currentAnimInstance = anim
+
+		-- set up keyframe name triggers
+		if (currentAnimKeyframeHandler ~= nil) then
+			currentAnimKeyframeHandler:disconnect()
+		end
+		currentAnimKeyframeHandler = currentAnimTrack.KeyframeReached:connect(keyFrameReachedFunc)
+		
+	end
+
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+local toolAnimName = ""
+local toolAnimTrack = nil
+local toolAnimInstance = nil
+local currentToolAnimKeyframeHandler = nil
+
+function toolKeyFrameReachedFunc(frameName)
+	if (frameName == "End") then
+--		print("Keyframe : ".. frameName)	
+		playToolAnimation(toolAnimName, 0.0, Humanoid)
+	end
+end
+
+
+function playToolAnimation(animName, transitionTime, humanoid, priority)	 
+		
+		local roll = math.random(1, animTable[animName].totalWeight) 
+		local origRoll = roll
+		local idx = 1
+		while (roll > animTable[animName][idx].weight) do
+			roll = roll - animTable[animName][idx].weight
+			idx = idx + 1
+		end
+--		print(animName .. " * " .. idx .. " [" .. origRoll .. "]")
+		local anim = animTable[animName][idx].anim
+
+		if (toolAnimInstance ~= anim) then
+			
+			if (toolAnimTrack ~= nil) then
+				toolAnimTrack:Stop()
+				toolAnimTrack:Destroy()
+				transitionTime = 0
+			end
+					
+			-- load it to the humanoid; get AnimationTrack
+			toolAnimTrack = humanoid:LoadAnimation(anim)
+			if priority then
+				toolAnimTrack.Priority = priority
+			end
+			 
+			-- play the animation
+			toolAnimTrack:Play(transitionTime)
+			toolAnimName = animName
+			toolAnimInstance = anim
+
+			currentToolAnimKeyframeHandler = toolAnimTrack.KeyframeReached:connect(toolKeyFrameReachedFunc)
+		end
+end
+
+function stopToolAnimations()
+	local oldAnim = toolAnimName
+
+	if (currentToolAnimKeyframeHandler ~= nil) then
+		currentToolAnimKeyframeHandler:disconnect()
+	end
+
+	toolAnimName = ""
+	toolAnimInstance = nil
+	if (toolAnimTrack ~= nil) then
+		toolAnimTrack:Stop()
+		toolAnimTrack:Destroy()
+		toolAnimTrack = nil
+	end
+
+
+	return oldAnim
+end
+
+-------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+function onRunning(speed)
+	if speed > 0.01 then
+		playAnimation("walk", 0.1, Humanoid)
+		if currentAnimInstance and currentAnimInstance.AnimationId == "http://www.roblox.com/asset/?id=180426354" then
+			setAnimationSpeed(speed / 14.5)
+		end
+		pose = "Running"
+	else
+		if emoteNames[currentAnim] == nil then
+			playAnimation("idle", 0.1, Humanoid)
+			pose = "Standing"
+		end
+	end
+end
+
+function onDied()
+	pose = "Dead"
+end
+
+function onJumping()
+	playAnimation("jump", 0.1, Humanoid)
+	jumpAnimTime = jumpAnimDuration
+	pose = "Jumping"
+end
+
+function onClimbing(speed)
+	playAnimation("climb", 0.1, Humanoid)
+	setAnimationSpeed(speed / 12.0)
+	pose = "Climbing"
+end
+
+function onGettingUp()
+	pose = "GettingUp"
+end
+
+function onFreeFall()
+	if (jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	end
+	pose = "FreeFall"
+end
+
+function onFallingDown()
+	pose = "FallingDown"
+end
+
+function onSeated()
+	pose = "Seated"
+end
+
+function onPlatformStanding()
+	pose = "PlatformStanding"
+end
+
+function onSwimming(speed)
+	if speed > 0 then
+		pose = "Running"
+	else
+		pose = "Standing"
+	end
+end
+
+function getTool()	
+	for _, kid in ipairs(Figure:GetChildren()) do
+		if kid.className == "Tool" then return kid end
+	end
+	return nil
+end
+
+function getToolAnim(tool)
+	for _, c in ipairs(tool:GetChildren()) do
+		if c.Name == "toolanim" and c.className == "StringValue" then
+			return c
+		end
+	end
+	return nil
+end
+
+function animateTool()
+	
+	if (toolAnim == "None") then
+		playToolAnimation("toolnone", toolTransitionTime, Humanoid, Enum.AnimationPriority.Idle)
+		return
+	end
+
+	if (toolAnim == "Slash") then
+		playToolAnimation("toolslash", 0, Humanoid, Enum.AnimationPriority.Action)
+		return
+	end
+
+	if (toolAnim == "Lunge") then
+		playToolAnimation("toollunge", 0, Humanoid, Enum.AnimationPriority.Action)
+		return
+	end
+end
+
+function moveSit()
+	RightShoulder.MaxVelocity = 0.15
+	LeftShoulder.MaxVelocity = 0.15
+	RightShoulder:SetDesiredAngle(3.14 /2)
+	LeftShoulder:SetDesiredAngle(-3.14 /2)
+	RightHip:SetDesiredAngle(3.14 /2)
+	LeftHip:SetDesiredAngle(-3.14 /2)
+end
+
+local lastTick = 0
+
+function move(time)
+	local amplitude = 1
+	local frequency = 1
+  	local deltaTime = time - lastTick
+  	lastTick = time
+
+	local climbFudge = 0
+	local setAngles = false
+
+  	if (jumpAnimTime > 0) then
+  		jumpAnimTime = jumpAnimTime - deltaTime
+  	end
+
+	if (pose == "FreeFall" and jumpAnimTime <= 0) then
+		playAnimation("fall", fallTransitionTime, Humanoid)
+	elseif (pose == "Seated") then
+		playAnimation("sit", 0.5, Humanoid)
+		return
+	elseif (pose == "Running") then
+		playAnimation("walk", 0.1, Humanoid)
+	elseif (pose == "Dead" or pose == "GettingUp" or pose == "FallingDown" or pose == "Seated" or pose == "PlatformStanding") then
+--		print("Wha " .. pose)
+		stopAllAnimations()
+		amplitude = 0.1
+		frequency = 1
+		setAngles = true
+	end
+
+	if (setAngles) then
+		local desiredAngle = amplitude * math.sin(time * frequency)
+
+		RightShoulder:SetDesiredAngle(desiredAngle + climbFudge)
+		LeftShoulder:SetDesiredAngle(desiredAngle - climbFudge)
+		RightHip:SetDesiredAngle(-desiredAngle)
+		LeftHip:SetDesiredAngle(-desiredAngle)
+	end
+
+	-- Tool Animation handling
+	local tool = getTool()
+	if tool and tool:FindFirstChild("Handle") then
+	
+		local animStringValueObject = getToolAnim(tool)
+
+		if animStringValueObject then
+			toolAnim = animStringValueObject.Value
+			-- message recieved, delete StringValue
+			animStringValueObject.Parent = nil
+			toolAnimTime = time + .3
+		end
+
+		if time > toolAnimTime then
+			toolAnimTime = 0
+			toolAnim = "None"
+		end
+
+		animateTool()		
+	else
+		stopToolAnimations()
+		toolAnim = "None"
+		toolAnimInstance = nil
+		toolAnimTime = 0
+	end
+end
+
+-- connect events
+Humanoid.Died:connect(onDied)
+Humanoid.Running:connect(onRunning)
+Humanoid.Jumping:connect(onJumping)
+Humanoid.Climbing:connect(onClimbing)
+Humanoid.GettingUp:connect(onGettingUp)
+Humanoid.FreeFalling:connect(onFreeFall)
+Humanoid.FallingDown:connect(onFallingDown)
+Humanoid.Seated:connect(onSeated)
+Humanoid.PlatformStanding:connect(onPlatformStanding)
+Humanoid.Swimming:connect(onSwimming)
+
+-- setup emote chat hook
+game:GetService("Players").LocalPlayer.Chatted:connect(function(msg)
+	local emote = ""
+	if msg == "/e dance" then
+		emote = dances[math.random(1, #dances)]
+	elseif (string.sub(msg, 1, 3) == "/e ") then
+		emote = string.sub(msg, 4)
+	elseif (string.sub(msg, 1, 7) == "/emote ") then
+		emote = string.sub(msg, 8)
+	end
+	
+	if (pose == "Standing" and emoteNames[emote] ~= nil) then
+		playAnimation(emote, 0.1, Humanoid)
+	end
+
+end)
+
+
+-- main program
+
+-- initialize to idle
+playAnimation("idle", 0.1, Humanoid)
+pose = "Standing"
+
+while Figure.Parent ~= nil do
+	local _, time = wait(0.1)
+	move(time)
+end
+end)
+
+Rightarm.Anchored = true
+Torso.Anchored = true
+Leftarm.Anchored = true
+Rightleg.Anchored = true
+Leftleg.Anchored = true
+Character.Head.Anchored = true
+for i=0,30 do
+    wait()
+    rig.HumanoidRootPart.RotVelocity = Vector3.new(0,0,0)
+    rig.HumanoidRootPart.Velocity = Vector3.new(0,0,0)
+end
+
+game.Players.LocalPlayer.Character.Animate.Disabled = true
+game:GetService("UserInputService").JumpRequest:connect(function(same)
+if rig.Humanoid.FloorMaterial~=Enum.Material.Air then
+rig.Humanoid:ChangeState(Enum.HumanoidStateType.Jumping)
+game.Players.LocalPlayer.Character.Dummy:FindFirstChildOfClass('Humanoid').Sit = false
+end
+end)
+if Character.Humanoid.RigType == Enum.HumanoidRigType.R6 then
+Character.HumanoidRootPart.RootJoint:Destroy()
+elseif Character.Humanoid.RigType == Enum.HumanoidRigType.R15 then
+Character.LowerTorso.Root:Destroy()
+end
+
+
+
+game.Players.LocalPlayer.Character.HumanoidRootPart.Anchored = true
+Humanoid = game.Players.LocalPlayer.Character.Humanoid
+game.RunService.RenderStepped:Connect(function()
+ rig.Humanoid:Move(Character.Humanoid.MoveDirection, false)
+ 
+local ActiveTracks = Humanoid:GetPlayingAnimationTracks()
+for _,v in pairs(ActiveTracks) do
+v:Stop()
+end
+end)
+Rightarm.Anchored = false
+Torso.Anchored = false
+Leftarm.Anchored = false
+Rightleg.Anchored = false
+Leftleg.Anchored = false
+Character.Head.Anchored = false
+game.Workspace.CurrentCamera.CameraSubject = rig.Humanoid
+
+--[[
+local Humanoid1 = Character.Humanoid
+local Humanoid2 = Character.Dummy.Humanoid
+Humanoid2.Parent = Character
+Humanoid1.Parent = Character.Dummy
+]]--
+
+
+
+
+local noclip = true char = game.Players.LocalPlayer.Character while true do if noclip == true then for _,v in pairs(char:children()) do pcall(function() if v.className == "Part" then v.CanCollide = false elseif v.ClassName == "Model" then v.Head.CanCollide = false end end) end end game:service("RunService").Stepped:wait() end
+
+
+	rig.Humanoid:Move(game.Players.LocalPlayer.Character.Humanoid.MoveDirection, false)
+
+spawn(function() while rig.Parent ~= nil do wait() end end)
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+SECOND:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local unanchoredparts = {}
+local movers = {}
+ local tog = true
+ local move = false
+local Player = game:GetService("Players").LocalPlayer
+local Character = Player.Character.Dummy
+local tor = Character["Right Arm"]
+local mov = {};
+local mov2 = {};
+
+local cool = "Cool"
+local x = 0
+local y = -1.086
+local z = 0.808
+
+local Hats = {but1   = game.Players.LocalPlayer.Character:WaitForChild("RightMk73LP"),
+}
+
+for i,v in next, Hats do
+v.Handle.AccessoryWeld:Remove()
+end
+
+function ftp(str)
+    local pt = {};
+    if str ~= 'me' and str ~= 'random' then
+        for i, v in pairs(game.Players:GetPlayers()) do
+            if v.Name:lower():find(str:lower()) then
+                table.insert(pt, v);
+            end
+        end
+    elseif str == 'me' then
+        table.insert(pt, plr);
+	elseif str == 'random' then
+		table.insert(pt, game.Players:GetPlayers()[math.random(1, #game.Players:GetPlayers())]);
+    end
+    return pt;
+end
+
+local function align(i,v)
+local att0 = Instance.new("Attachment", i)
+att0.Position = Vector3.new(0,0,0)
+local att1 = Instance.new("Attachment", v)
+att1.Position = Vector3.new(0,0,0)
+local AP = Instance.new("AlignPosition", i)
+AP.Attachment0 = att0
+AP.Attachment1 = att1
+AP.RigidityEnabled = false
+AP.ReactionForceEnabled = false
+AP.ApplyAtCenterOfMass = true
+AP.MaxForce = 9999999
+AP.MaxVelocity = math.huge
+AP.Responsiveness = 652
+local AO = Instance.new("AlignOrientation", i)
+AO.Attachment0 = att0
+AO.Attachment1 = att1
+AO.ReactionTorqueEnabled = true
+AO.PrimaryAxisOnly = false
+AO.MaxTorque = 9999999
+AO.MaxAngularVelocity = math.huge
+AO.Responsiveness = 502
+end
+
+Hats.but1.Handle.Size = Vector3.new(0.001, 0.001, 0.001)
+
+align(Hats.but1.Handle, Character["Right Arm"])
+
+Character:WaitForChild("Right Arm"):FindFirstChild("Attachment").Name = "Attachment1"
+
+
+     h = Instance.new("Attachment",phandle)
+     h.Rotation = Vector3.new(0, 0, 0)
+     h.Position = Vector3.new(0, 0, 0)
+     
+     lg = Instance.new("Attachment",tor)
+     lg.Rotation = Vector3.new(0, 0, 0)
+     lg.Position = Vector3.new(0, 0, -1.386)
+
+     gap = Instance.new("AlignPosition",phandle)
+     gap.Attachment0 = h
+     gap.Attachment1 = lg
+     gap.RigidityEnabled = true
+     
+     gao = Instance.new("AlignOrientation",phandle)
+     gao.Attachment0 = h
+     gao.Attachment1 = lg
+     gao.RigidityEnabled = true
+
+local alignpos = Instance.new("AlignPosition", Character)
+local alignorien = Instance.new("AlignOrientation", Character)
+alignpos.Attachment0 = att1
+alignpos.Attachment1 = att2
+alignpos.RigidityEnabled = false
+alignpos.ReactionForceEnabled = false
+alignpos.ApplyAtCenterOfMass = true
+alignpos.MaxForce = 99999999
+alignpos.MaxVelocity = math.huge
+alignpos.Responsiveness = 502
+alignorien.Attachment0 = att1
+alignorien.Attachment1 = att2
+alignorien.ReactionTorqueEnabled = false
+alignorien.PrimaryAxisOnly = false
+alignorien.MaxTorque = 99999999
+alignorien.MaxAngularVelocity = math.huge
+alignorien.Responsiveness = 502
+
+Wait(0.5)
+
+--Converted with ttyyuu12345's model to script plugin v4
+--By Rufus14
+
+local ToolName = "RightMk73LP"
+
+mouse = game.Players.LocalPlayer:GetMouse()
+game.Players.LocalPlayer.Character.Dummy.Humanoid.MaxHealth = math.huge
+game.Players.LocalPlayer.Character.Dummy.Humanoid.Health = math.huge
+function sandbox(var,func)
+	local env = getfenv(func)
+	local newenv = setmetatable({},{
+		__index = function(self,k)
+			if k=="script" then
+				return var
+			else
+				return env[k]
+			end
+		end,
+	})
+	setfenv(func,newenv)
+	return func
+end
+cors = {}
+mas = Instance.new("Model",game:GetService("Lighting"))
+Part0 = Instance.new("Part")
+
+local athp = Instance.new("Attachment",Part0)
+local atho = Instance.new("Attachment",Part0)
+
+if ToolName then
+    game.Players.LocalPlayer.Character[ToolName].Handle:FindFirstChildOfClass("AlignPosition").Attachment1 = athp
+    game.Players.LocalPlayer.Character[ToolName].Handle:FindFirstChildOfClass("AlignOrientation").Attachment1 = atho
+    atho.Rotation = Vector3.new(180,-100,0)
+end
+
+SpecialMesh1 = Instance.new("SpecialMesh")
+Part0.Name = "Gun"
+Part0.Parent = mas
+Part0.CanCollide = false
+Part0.Size = Vector3.new(0.970000505, 2.46999931, 0.380000055)
+Part0.CFrame = CFrame.new(-211.74501, 2.6168952, 37.920002, 1, 0, 0, 0, 1, 0, 0, 0, 1)
+Part0.Position = Vector3.new(-211.74501, 2.6168952, 37.920002)
+SpecialMesh1.Parent = Part0
+SpecialMesh1.MeshId = "rbxassetid://nO"
+SpecialMesh1.Scale = Vector3.new(0.00499999989, 0.00499999989, 0.00499999989)
+SpecialMesh1.TextureId = "rbxassetid://nO"
+SpecialMesh1.MeshType = Enum.MeshType.FileMesh
+SpecialMesh1.Scale = Vector3.new(0.00499999989, 0.00499999989, 0.00499999989)
+for i,v in pairs(mas:GetChildren()) do
+	v.Parent = game:GetService("Players").LocalPlayer.Character.Dummy
+	pcall(function() v:MakeJoints() end)
+end
+mas:Destroy()
+for i,v in pairs(cors) do
+	spawn(function()
+		pcall(v)
+	end)
+end
+cankys = true
+weld = Instance.new("Weld", Part0)
+weld.Part0 = game.Players.LocalPlayer.Character.Dummy["Left Arm"]
+weld.Part1 = Part0
+weld.C0 = CFrame.new(0.158004761, -1.63815379, -1.00455856, -5.79879307e-22, 9.29214533e-23, 1, -0.587791622, -0.809012473, -2.65673535e-22, 0.809012473, -0.587791622, 5.23747954e-22)
+function killyourself(key)
+	if cankys then
+		cankys = false
+		if game.Players.LocalPlayer.Character.Dummy.Head:findFirstChild("face") then
+			game.Players.LocalPlayer.Character.Dummy.Head.face.Texture = "rbxassetid://1148787155"
+		end
+		local rhandweld = Instance.new("Weld", game.Players.LocalPlayer.Character.Dummy.Torso)
+		rhandweld.Part0 = game.Players.LocalPlayer.Character.Dummy.Torso
+		rhandweld.Part1 = game.Players.LocalPlayer.Character.Dummy["Right Arm"]
+		rhandweld.C0 = CFrame.new(1.5, 0, 0, 1, -1.6395192e-43, 0, -1.6395192e-43, 1, 0, 0, 0, 1)
+		local lhandweld = Instance.new("Weld", game.Players.LocalPlayer.Character.Dummy.Torso)
+		lhandweld.Part0 = game.Players.LocalPlayer.Character.Dummy.Torso
+		lhandweld.Part1 = game.Players.LocalPlayer.Character.Dummy["Left Arm"]
+		lhandweld.C0 = CFrame.new(-1.5, 0, 0, 1, -1.6395192e-43, 0, -1.6395192e-43, 1, 0, 0, 0, 1)
+		for i = 0,2 , 0.02 do
+			weld.C0 = weld.C0:lerp(CFrame.new(0.720336914, -0.258590698, -0.514060974, 0.409927189, 0.572569966, -0.710018694, 0.0567400455, 0.760912359, 0.646370947, 0.910354853, -0.305250764, 0.279430419),i)
+			lhandweld.C0 = lhandweld.C0:lerp(CFrame.new(-0.832244873, 0.405325174, -1.44667816, 0.719340205, -0.634600103, -0.28254649, -0.214658037, 0.183768019, -0.959245205, 0.660660148, 0.750674427, -0.00403028121),i)
+			rhandweld.C0 = rhandweld.C0:lerp(CFrame.new(0.921920776, 0.294008493, -1.1861496, 0.88295126, 0.469464868, 6.12843053e-07, -0.0490720123, 0.0922940373, -0.994521856, -0.466893107, 0.878114343, 0.104528703),i)
+			game:GetService("RunService").RenderStepped:wait()
+		end
+		script.Parent = nil
+function ragdoll()
+game.Players.LocalPlayer.Character.Dummy.Archivable = true
+clone = game.Players.LocalPlayer.Character.Dummy:Clone()
+clone.Parent = workspace
+for i,v in pairs(clone:GetChildren()) do
+	if v.ClassName == "Script" or v.ClassName == "LocalScript" then
+		v:destroy()
+	end
+	for i,p in pairs(v:GetChildren()) do
+	if p.ClassName == "Weld" or p.ClassName == "Motor6D" or p.ClassName == "BodyVelocity" then
+		p:destroy()
+	end
+end
+end
+for i,t in pairs(game.Players.LocalPlayer.Character.Dummy:GetChildren()) do
+	if t.ClassName == "Accessory" or t.ClassName == "ForceField" then
+		t:destroy()
+	end
+end
+vel = Instance.new("BodyVelocity", clone.Torso)
+vel.Velocity = clone.Torso.CFrame.lookVector * -5
+vel.MaxForce = Vector3.new(math.huge,math.huge,math.huge)
+clone.Head.face.Texture = "http://www.roblox.com/asset/?id=305296807"
+using = false
+hit = Instance.new("Sound", clone.Torso)
+hit.SoundId = "rbxassetid://260430060"
+hit.Volume = 0
+hit1 = Instance.new("Sound", clone.Torso)
+hit1.SoundId = "rbxassetid://138087186"
+hit1.Volume = 0
+hit2 = Instance.new("Sound", clone.Torso)
+hit2.SoundId = "rbxassetid://131237241"
+hit2.Volume = 0
+hit3 = Instance.new("Sound", clone.Torso)
+hit3.SoundId = "rbxassetid://278062209"
+hit3.Volume = 0
+hit3.TimePosition = 0.33
+ded = Instance.new("Sound", clone.Torso)
+ded.SoundId = "rbxassetid://304679846"
+ded.Volume = 10
+local leftarm = clone:findFirstChild("Left Arm")
+local rightrm = clone:findFirstChild("Right Arm")
+local leftleg = clone:findFirstChild("Left Leg")
+local rightleg = clone:findFirstChild("Right Leg")
+local head = clone:findFirstChild("Head")
+for i, g in pairs(game.Players.LocalPlayer.Character.Dummy:GetChildren()) do
+	if g.ClassName == "Part" then
+		g:destroy()
+	end
+end
+for i, h in pairs(game.Players.LocalPlayer.Character.Dummy:GetChildren()) do
+	if h.ClassName == "Accesory" then
+		h:destroy()
+	end
+end
+game.Workspace.CurrentCamera.CameraSubject = head
+if head then
+            local attachment = Instance.new("Attachment", clone.Head)
+            attachment.Position = Vector3.new(0, -0.5, 0)
+            attachment.Name = "lol"
+            attachment.Visible = false
+            clone.Torso.NeckAttachment.Visible = false
+            clone.Torso.NeckAttachment.Position = clone.Torso.NeckAttachment.Position + Vector3.new(0,0,0)
+            local ball = Instance.new("BallSocketConstraint", clone)
+            ball.Attachment0 = clone.Torso.NeckAttachment
+            ball.Attachment1 = attachment
+			ball.LimitsEnabled = true
+			ball.TwistLimitsEnabled = true
+			ball.UpperAngle = 90
+			ball.Restitution = 0.5
+			ball.TwistUpperAngle = 90
+			ball.TwistLowerAngle = -90
+            local  collidepartofleftleg = Instance.new("Part", clone.Torso)
+            collidepartofleftleg.Name = "Bone"
+            collidepartofleftleg.Size = Vector3.new(0.7,0.7,0.7)
+            collidepartofleftleg.Transparency = 1
+            collidepartofleftleg:BreakJoints()
+            local weeld = Instance.new("Weld", collidepartofleftleg)
+            weeld.Part0 = collidepartofleftleg
+            weeld.Part1 = clone["Head"]
+        end
+if leftleg ~= nil then
+local glue = Instance.new("Glue", clone.Torso)
+glue.Part0 = clone.Torso
+glue.Part1 = leftleg
+glue.Name = "Left leg"
+local collider = Instance.new("Part", leftleg)
+collider.Position = Vector3.new(0,999,0)
+collider.Size = Vector3.new(1.5, 1, 1)
+collider.Shape = "Cylinder"
+local weld = Instance.new("Weld", collider)
+weld.Part0 = leftleg
+weld.Part1 = collider
+weld.C0 = CFrame.new(0,-0.2,0) * CFrame.fromEulerAnglesXYZ(0, 0, math.pi/2)
+collider.TopSurface = "Smooth"
+collider.BottomSurface = "Smooth"
+collider.formFactor = "Symmetric"
+glue.C0 = CFrame.new(-0.5, -1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+glue.C1 = CFrame.new(-0, 1, 0, -0, -0, -1, 0, 1, 0, 1, 0, 0)
+collider.Transparency = 1
+end
+------------
+if rightleg ~= nil then
+local glue1 = Instance.new("Glue", clone.Torso)
+glue1.Part0 = clone.Torso
+glue1.Part1 = rightleg
+glue1.Name = "Right leg"
+local collider1 = Instance.new("Part", rightleg)
+collider1.Position = Vector3.new(0,999,0)
+collider1.Size = Vector3.new(1.5, 1, 1)
+collider1.Shape = "Cylinder"
+local weld1 = Instance.new("Weld", collider1)
+weld1.Part0 = rightleg
+weld1.Part1 = collider1
+weld1.C0 = CFrame.new(0,-0.2,0) * CFrame.fromEulerAnglesXYZ(0, 0, math.pi/2)
+collider1.TopSurface = "Smooth"
+collider1.BottomSurface = "Smooth"
+collider1.formFactor = "Symmetric"
+glue1.C0 = CFrame.new(0.5, -1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+glue1.C1 = CFrame.new(0, 1, 0, 0, 0, 1, 0, 1, 0, -1, -0, -0)
+collider1.Transparency = 1
+end
+------------
+if rightrm ~= nil then
+local glue11 = Instance.new("Glue", clone.Torso)
+glue11.Part0 = clone.Torso
+glue11.Part1 = rightrm
+glue11.Name = "Right shoulder"
+local collider11 = Instance.new("Part", rightrm)
+collider11.Position = Vector3.new(0,9999,0)
+collider11.Size = Vector3.new(1.5,1,1)
+collider11.Shape = "Cylinder"
+local weld11 = Instance.new("Weld", collider11)
+weld11.Part0 = rightrm
+weld11.Part1 = collider11
+weld11.C0 = CFrame.new(0,-0.2,0) * CFrame.fromEulerAnglesXYZ(0, 0, math.pi/2)
+collider11.TopSurface = "Smooth"
+collider11.BottomSurface = "Smooth"
+collider11.formFactor = "Symmetric"
+glue11.C0 = CFrame.new(1.5, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+glue11.C1 = CFrame.new(0, 0.5, 0, 0, 0, 1, 0, 1, 0, -1, 0, 0)
+collider11.Transparency = 1
+end
+------------
+if leftarm ~= nil then
+local glue111 = Instance.new("Glue", clone.Torso)
+glue111.Part0 = clone.Torso
+glue111.Part1 = leftarm
+glue111.Name = "Left shoulder"
+local collider111 = Instance.new("Part", leftarm)
+collider111.Position = Vector3.new(0,9999,0)
+collider111.Size = Vector3.new(1.5,1,1)
+collider111.Shape = "Cylinder"
+local weld111 = Instance.new("Weld", collider111)
+weld111.Part0 = leftarm
+weld111.Part1 = collider111
+weld111.C0 = CFrame.new(0,-0.2,0) * CFrame.fromEulerAnglesXYZ(0, 0, math.pi/2)
+collider111.TopSurface = "Smooth"
+collider111.BottomSurface = "Smooth"
+collider111.formFactor = "Symmetric"
+glue111.C0 = CFrame.new(-1.5, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+glue111.C1 = CFrame.new(0, 0.5, 0, 0, 0, -1, 0, 1, 0, 1, 0, 0)
+collider111.Transparency = 1
+----------------
+sensoring = Instance.new("Part", clone.Torso)
+sensoring.Size = Vector3.new(1.2,1.1,0.8)
+sensoring.CanCollide = false
+sensoring.Position = clone.Torso.Position
+local welder = Instance.new("Weld", sensoring)
+welder.Part0 = clone.Torso
+welder.Part1 = sensoring
+welder.C0 = welder.C0 * CFrame.new(0,0,1.05)
+sensoring.Transparency = 1
+-----------------
+sensoring1 = Instance.new("Part", clone.Torso)
+sensoring1.Size = Vector3.new(1.2,1.1,0.8)
+sensoring1.CanCollide = false
+sensoring1.Position = clone.Torso.Position
+local welder1 = Instance.new("Weld", sensoring)
+welder1.Part0 = clone.Torso
+welder1.Part1 = sensoring1
+welder1.C0 = welder1.C0 * CFrame.new(0,0,-1.05)
+sensoring1.Transparency = 1
+end
+ded:Play()
+vel:destroy()
+wait(0.5)
+local function touch()
+	if not using then
+		using = true
+		local Math = math.random(1,4)
+		if Math == 1 then
+			hit:Play()
+		end
+		if Math == 2 then
+			hit1:Play()
+		end
+		if Math == 3 then
+			hit2:Play()
+		end
+		if Math == 4 then
+			hit3:Play()
+		end
+		wait(0.1)
+		using = false
+	end
+end
+sensoring.Touched:connect(touch)
+sensoring1.Touched:connect(touch)
+while true do
+	clone.Head.CanCollide = false
+	game:GetService("RunService").Stepped:wait()
+end
+end
+
+game.Players.LocalPlayer.Character.Dummy.Humanoid.Died:connect(ragdoll)
+
+--di ent
+game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end
+end
+mouse.Button1Down:connect(killyourself)
+

