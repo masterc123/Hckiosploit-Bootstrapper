@@ -1,1 +1,1 @@
-ekseOtomatis = pusat skrip =menyegarkan=wedevapi=eksekusi=jernih=membuka file= meyimpan file =pengaturan=pasang otomatis=menempel
+ekseOtomatis=pusat skrip=menyegarkan=wedevapi=eksekusi=jernih=membuka file=meyimpan file=pengaturan=pasang otomatis=menempel
