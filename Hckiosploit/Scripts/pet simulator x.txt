@@ -1,4 +1,1 @@
 loadstring(game:HttpGet('https://system-exodus.com/scripts/PetSimulator/PetSimulatorX.lua', true))()
-
-
-loadstring(game:HttpGet"https://scriptblox.com/raw/SAZA-HUB_496")()

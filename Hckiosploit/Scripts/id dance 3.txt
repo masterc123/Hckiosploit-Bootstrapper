@@ -1,0 +1,181 @@
+R15
+8181182675 | Electro Shuffle
+7112409895 | Caramelldansen
+8180638511 | Best Mates
+8202901560 | PPAP
+8166608032 | Gangnam Stlye
+8163837837 | TF2 Conga
+7522520313 | Boston Breakdance
+8530605038 | Default Dance
+8181191449 | Electro Swing
+7315594396 | Engineer Taunt
+6840439915 | Garry Dance
+8464209985 | Hype
+7080827944 | Ievan Polka
+6695404927 | Joshiraku Dance
+8163938684 | Kazotsky Kick
+6641397663 | Mannrobics
+8580153975 | Rick Roll
+6857001500 | Nya Dance
+8464974976 | Orange Justice
+6431943140 | Phut Hon
+8163761362 | Schadenfreude
+7690549383 | Smooth Moves
+8166878592 | Squat Kick
+7391349267 | TF2 Disco Fever
+8101752292 | Take the L
+5227797527 | Torture-Dance
+5209309837 | Drip
+6303635930 | Russian Dance
+5208295814 | Mio Honda
+6317341653 | Mio Honda 2
+5004536044 | Caramelldansen
+6303640206 | Smug
+7801622352 | Car Shearer
+6702553388 | Garry Dance 2
+6602144225 | Nya Dance
+5839787075 | Afterimage
+6317359154 | DIO Pose
+5933433776 | Chika Dance
+6303632915 | Moonwalk
+6303816690 | Moonwalk 2
+6818734623 | A1 Dance
+7801705159 | Fresh
+6748491532 | Cheerleader
+6702544574 | Howard
+6646010492 | Zany
+5621098751 | Distraction Dance
+5692381350 | Helltaker Dance
+5208296824 | Goopie 1
+5312288965 | Goopie Full
+6890826692 | Naruto Run
+5213282043 | Troll Dance
+6572160443 | Whitty Idle
+5056451063 | Sans Idle
+5220492219 | Barrage Punch
+5056451063 | Sans Idle
+6303983084 | Backflip
+6702557614 | Skipping
+6303569994 | T-Pose
+6303515516 | Defeated
+6303577236 | Victory
+6303516483 | Dying
+6890820240 | Dragon Stance
+6302450298 | Capoeira
+5213269542 | The Flow
+6303518872 | Flying
+6514335857 | Peter Dance
+
+R6
+3381474830 | Billy Bounce
+3262592866 | Orange Justice
+4746273203 | Rat
+3261753939 | BrodyQuest
+4525385199 | Howard
+3450125501 | Smug
+3534855146 | Blender
+3259216638 | Turk
+3535053121 | Felix
+3536215993 | CoWbOy
+3273532175 | T-Pose
+3564937614 | Joy
+3414624197 | No Touchin'
+3607744332 | Arm Shuffle
+4785986705 | Robot
+3623215692 | Boogie Down
+3619935462 | Electro Shuffle
+3643129020 | Crabby
+3656900015 | Parrot
+3675001079 | ScoutRobics
+3690496479 | CaramellDansen
+3696716156 | Revenge
+3742184308 | Got That
+4791471969 | Billie Jean
+4792883833 | Billie Jean
+4776745048 | Praise The Lord
+3769807555 | Reckless
+3882120151 | Karate Moves
+3883926195 | Cybergoth
+3942752090 | Bothered
+3993946754 | Swift Hops
+4049304710 | Spooky Month
+4064050153 | Spite
+4087012028 | Roach
+4109162757 | Gang Torture
+4239646681 | Alti
+4256820336 | Comeback
+4261643445 | Kanye
+4300444948 | Knee Slapper
+4369816373 | Heel click
+4686555525 | Radical
+4396327238 | Spook Shuffle
+4408536995 | Carlton
+3442913250 | Casey
+4432024917 | Freestylin'
+4474845845 | Ecstatic
+4459292790 | RickRoll
+4499527946 | Wess
+4539565912 | Flippin, Smooth
+4558409610 | Breakdown
+4572096542 | Conga
+4597363132 | Mario
+4633952191 | Whip
+4677930905 | Sniper
+4677880377 | Spy
+4679511279 | Scout
+4678151003 | Pyro
+4678225061 | Heavy
+4677980227 | Engineer
+4679640288 | Medic
+4764153637 | Demoman
+4787449997 | Soldier
+4809145259 | Anthony
+4820078879 | Electro Swing
+4812941481 | Floss
+4841015627 | Side Hustle
+4300218011 | Dream Feet
+4300228160 | Minecraft Parrot
+4300223810 | Garry Dance
+3485013176 | Shuffle
+4827299133 | Take The L
+4776588732 | Aerostep
+4776734129 | Clean Groove
+4776560183 | Penis Music
+4846220052 | Thriller
+4724894341 | Helicopter
+4846000379 | Loud Laugh
+4776598075 | Peter Parker
+4776544655 | Kazotsky Kick
+5806573931 | Carson Shearer
+5011408603 | Rewind
+4835795413 | Skibidi
+3383725246 | Spasm
+4900539662 | Smooth Moves
+4699820365 | Thriller 2.0
+4715102040 | Double Step
+4699826237 | The Roll
+4837748730 | Anthony Shuffle
+4719919809 | Penis Music 2.0
+4896926493 | Spongebob
+4837749916 | Carlton 2
+4791471969 | Billie Jean
+4863897442 | Side Hustle
+4837753372 | Praise The Lord 2.0
+5025546871 | Boogie Down 2.0
+4846209506 | Kazotsky Kick 2.0
+4959380041 | Drip
+4876471547 | Side Step
+5009879973 | Running In Terror
+5079952034 | Cruisin
+3053543383 | Pogo
+4776575115 | Default Dance
+4784189222 | Sea Shanties
+4831391731 | snoop
+5238669868 | Goopie Dance
+5754856263 | Infestation
+5754164114 | Lose Control
+5754318221 | Caramelldansen
+5749601734 | Smug
+7063945703 | Smooth Criminal
+7005395156 | Kazotsky Kick
+3448856633 | Kakyoin Dance
