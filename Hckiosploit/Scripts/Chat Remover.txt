@@ -1,0 +1,11 @@
+-- FE chat made by MrBeast#5353
+-- The effect isn't immediate, it they may take a few minutes.
+-- This is a beta version, it only works in games that use the default roblox chat
+while true do
+    wait(1.7)
+local args = {
+    [1] = " ",
+    [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+end
