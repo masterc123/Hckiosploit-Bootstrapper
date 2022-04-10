@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/S1NSWRLD/Akon-Private/main/akon%20BEST%20LOCK.lua", true))()
